@@ -1,11 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
 import styled from "styled-components";
 import GridEstadisticas1 from "../components/dashboardGrid/GridEstadisticas1";
-import DataTable from "../components/shared/DataTable";
+import DataTable from "../components/dataTable/DataTable";
+import Card from "../components/shared/Card";
+import { AppContext } from "../hooks/useContextApp";
+
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
 	height: 100%;
-	padding-top: 80px;
+	padding-top: 20px;
 
 	.section-dashboard {
 		height: auto;
@@ -20,6 +23,7 @@ const HomeStyled = styled.main`
 		display: block;
 		height: 550px;
 		width: 80%;
+		overflow-x: auto;
 		//border: 1px solid red;
 	}
 	.selection-grid-1 {
@@ -41,11 +45,14 @@ const HomeStyled = styled.main`
 	}
 	.table {
 		height: 100%;
-		width: 100%;
+		width: auto;
+		overflow-y: auto;
 	}
 `;
 
 const Home = () => {
+	const { data } = useContext(AppContext);
+	
 	return (
 		<HomeStyled>
 			<section className='section-dashboard'>
@@ -68,31 +75,9 @@ const Home = () => {
 				<div className='content-grid'>
 					<section className='selection-grid-1'>
 						<div className='table'>
-							<DataTable
-								headers={[
-									"hola",
-									"hola",
-									"holassssdf",
-									"hola",
-									"holassssdf",
-									"holassssdf",
-									"hola",
-									"holassfffffffffffffffffssdf",
-									"holassssdf",
-									"hola",
-									"holassfffffffffffffffffffffffffsdf",
-									"holassssdf",
-									"hola",
-									"holassssdf",
-									"holassssdf",
-									"hola",
-									"holassssdf",
-									"holassssdf",
-									"hola",
-									"holassssdf",
-								]}
-								width='160px'
-							/>
+							<Card>
+								<DataTable/>
+							</Card>
 						</div>
 					</section>
 				</div>

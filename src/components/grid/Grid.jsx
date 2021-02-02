@@ -6,7 +6,7 @@ const Content = styled.div`
 	display: grid;
 	grid-template-columns: repeat(
 		${(props) => props.col},
-		${(props) => props.colQuantity}
+		${(props) => props.colSize}
 	);
 	grid-template-rows: repeat(${(props) => props.rows}, 1fr);
 	grid-gap: ${(props) => props.gap}em;
@@ -29,7 +29,7 @@ const Grid = ({
 	width,
 	mq,
 	height,
-	colQuantity,
+	colSize,
 	boxShadow,
 }) => (
 	<Content
@@ -39,7 +39,7 @@ const Grid = ({
 		width={width}
 		mq={mq}
 		height={height}
-		colQuantity={colQuantity}
+		colSize={colSize}
 		boxShadow={boxShadow}
 	>
 		{children}
@@ -53,7 +53,7 @@ Grid.protoTypes = {
 	width: PropTypes.string,
 	mq: PropTypes.bool,
 	height: PropTypes.string,
-	colQuantity: PropTypes.string,
+	colSize: PropTypes.string,
 	boxShadow: PropTypes.bool,
 };
 Grid.defaultProps = {
@@ -63,7 +63,7 @@ Grid.defaultProps = {
 	width: "100%",
 	mq: true,
 	height: "100%",
-	colQuantity: "1fr",
+	colSize: "1fr",
 	boxShadow: true,
 };
 export { Grid };
