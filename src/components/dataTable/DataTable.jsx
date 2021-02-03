@@ -28,7 +28,11 @@ const DataTable = () => {
 			<div className='wrap'>
 				<div className='table'>
 					<HeaderTable data={data.preguntas}/>
-					<BodyTable/>
+					{
+						data.respuestas.map((e,i) => (
+							<BodyTable key={i} data={e}/>
+						))
+					}
 				</div>
 			</div>
 		</DataTableStyled>
