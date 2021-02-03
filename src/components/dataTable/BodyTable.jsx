@@ -58,7 +58,6 @@ const BoxStyled = styled.div`
     }
 `;
 const BodyTable = ({ data }) => {
-	console.log(data);
 	return (
 		<BodyTableStyled>
 			<div className='wrap'>

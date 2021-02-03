@@ -52,7 +52,6 @@ const HomeStyled = styled.main`
 
 const Home = () => {
 	const { data } = useContext(AppContext);
-	
 	return (
 		<HomeStyled>
 			<section className='section-dashboard'>
