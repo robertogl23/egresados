@@ -42,6 +42,7 @@ const BoxStyled = styled.div`
 		overflow-y: auto;
 		display: flex;
 		align-items: center;
+		font-weight:800;
 	}
 	.line {
 		height: 80%;
@@ -57,7 +58,6 @@ const BoxStyled = styled.div`
 	}
 `;
 const HeaderTable = ({ colSize, columns, data }) => {
-	console.log(data);
 	return (
 		<HeaderTableStyled>
 			<Grid columns={data.length} colSize={"260px"}  gap={0}>

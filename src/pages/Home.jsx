@@ -21,7 +21,7 @@ const HomeStyled = styled.main`
 	}
 	.content-grid {
 		display: block;
-		height: 550px;
+		height: 650px;
 		width: 80%;
 		overflow-x: auto;
 		//border: 1px solid red;
@@ -52,7 +52,6 @@ const HomeStyled = styled.main`
 
 const Home = () => {
 	const { data } = useContext(AppContext);
-	
 	return (
 		<HomeStyled>
 			<section className='section-dashboard'>
