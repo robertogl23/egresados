@@ -3,6 +3,7 @@ import useSWR from "swr";
 import Home from "../pages/Home";
 import Header from "./header/Header";
 import { AppContext } from "../hooks/useContextApp";
+import Loading from "./shared/Loading";
 const fetcher = (...args) =>
 	fetch(...args).then((res) => res.json());
 const App = () => {
@@ -11,7 +12,7 @@ const App = () => {
 		fetcher
 	);
 	if (error) return <div>failed to load</div>;
-	if (!data) return <div>loading...</div>;
+	if (!data) return <Loading/>;
 	return (
 		<div className='app'>
 			<AppContext.Provider value={{data}}>
