@@ -53,6 +53,9 @@ const BoxStyled = styled.div`
 		display: grid;
 		align-items: center;
 	}
+    span{
+        color:red;
+    }
 `;
 const BodyTable = ({ data }) => {
 	console.log(data);
@@ -71,7 +74,7 @@ const BodyTable = ({ data }) => {
                                                     e != "" ? (
                                                         e
                                                     ):(
-                                                        <span>No a contestado</span>
+                                                        <span >No a contestado</span>
                                                     )
                                                 }</div>
 											</div>

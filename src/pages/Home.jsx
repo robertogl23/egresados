@@ -21,7 +21,7 @@ const HomeStyled = styled.main`
 	}
 	.content-grid {
 		display: block;
-		height: 550px;
+		height: 650px;
 		width: 80%;
 		overflow-x: auto;
 		//border: 1px solid red;

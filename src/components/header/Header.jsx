@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logoTesi from "../../img/LOGO_TESI.jpg";
+import logoTesi from "../../img/LOGO_TESI.png";
 const HeaderStyled = styled.header`
 	//border: 1px solid red;
 	height: 64px;
@@ -11,9 +11,12 @@ const HeaderStyled = styled.header`
 	background: #fff;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
 		0 1px 2px rgba(0, 0, 0, 0.24);
-		img{
-			width:80px;
-		}
+	display: flex;
+	align-items:center;
+	img{
+		width:160px;
+		margin-left:40px;
+	}
 `;
 const Header = () => {
 	return (

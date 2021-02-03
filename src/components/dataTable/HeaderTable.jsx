@@ -42,6 +42,7 @@ const BoxStyled = styled.div`
 		overflow-y: auto;
 		display: flex;
 		align-items: center;
+		font-weight:800;
 	}
 	.line {
 		height: 80%;
