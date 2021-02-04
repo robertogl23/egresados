@@ -32,6 +32,9 @@ const Header = () => {
 			<li>
 				<NavLink  to='/empleadores' activeClassName="selected">Empleadores</NavLink  >
 			</li>
+			<li>
+				<NavLink  to='/egresados' activeClassName="selected">Egresados</NavLink  >
+			</li>
 		</HeaderStyled>
 	);
 };

@@ -7,13 +7,15 @@ import {
 import Header from '../components/header/Header';
 import Home from '../pages/Home';
 import HomeEmpleadores from '../pages/HomeEmpleadores';
+import EgresadosRouter from './EgresadosRouter';
 const AppRouter = () => {
     return (
         <Router>
             <Header/>
             <Switch>
                 <Route  exact path="/" component={Home}/>
-                <Route  exact path="/empleadores" component={HomeEmpleadores}/>
+                <Route   path="/empleadores" component={HomeEmpleadores}/>
+                <Route   path="/egresados" component={EgresadosRouter}/>
             </Switch>
         </Router >
     )
