@@ -18,12 +18,12 @@ const GridDashBoard = () => {
         <Grid columns={6}rows={2}>
             <Box startCol ={1} endCol ={4}>
                 <Card>
-                    <PieChart title = {'grafica1'}data={data.estadistica1}/> 
+                    <PieChart title = {'Que tipo empresas hay'}data={data.estadistica1}/> 
                 </Card>
             </Box>
             <Box startCol={4} endCol={7}>
                 <Card>
-                    <PieChart title = {'grafica1'}data={data.estadistica2}/>
+                    <PieChart title = {'Carreras de los egresados que contratan los empleadores'}data={data.estadistica2}/>
                     
                 </Card>
             </Box>
