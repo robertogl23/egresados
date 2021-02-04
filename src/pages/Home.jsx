@@ -3,6 +3,7 @@ import styled from "styled-components";
 import GridEstadisticas1 from "../components/dashboardGrid/GridEstadisticas1";
 import Card from "../components/shared/Card";
 import useSWR from "swr";
+import GridDashBoard from "../components/dashboardEmpleadores/GridDashBoard";
 
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
@@ -79,17 +80,17 @@ const Home = () => {
 				<div className='content-grid'>
 					<section className='selection-grid-1'>
 						<div className='table'>
-							<Card>
+							
 								{
 									!data ? (
 										"loading"
 									)
 									:(
-										"hola que onda"
+									<GridDashBoard/>	
 
 									)
 								}
-							</Card>
+							
 						</div>
 					</section>
 				</div>
