@@ -3,7 +3,11 @@ import styled from "styled-components";
 import GridEstadisticas1 from "../components/dashboardGrid/GridEstadisticas1";
 import Card from "../components/shared/Card";
 import useSWR from "swr";
+<<<<<<< HEAD
 import Loading from "../components/shared/Loading";
+=======
+import GridDashBoard from "../components/dashboardEmpleadores/GridDashBoard";
+>>>>>>> 2f427f75163944b2544aafd7b1559e00d4eb333f
 
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
@@ -80,17 +84,17 @@ const Home = () => {
 				<div className='content-grid'>
 					<section className='selection-grid-1'>
 						<div className='table'>
-							<Card>
+							
 								{
 									!data ? (
 										<Loading typeSpinner={"TailSpin"}/>
 									)
 									:(
-										"hola que onda"
+									<GridDashBoard/>	
 
 									)
 								}
-							</Card>
+							
 						</div>
 					</section>
 				</div>
