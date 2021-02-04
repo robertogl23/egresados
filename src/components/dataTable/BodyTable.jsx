@@ -70,7 +70,7 @@ const BodyTable = ({ data }) => {
 										<div className='text'>
 											<div className='wrap-text'>
 												<div className='t'>{
-                                                    e != "" ? (
+                                                    e !== "" ? (
                                                         e
                                                     ):(
                                                         <span >No a contestado</span>

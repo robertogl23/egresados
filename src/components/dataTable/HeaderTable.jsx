@@ -57,7 +57,7 @@ const BoxStyled = styled.div`
 
 	}
 `;
-const HeaderTable = ({ colSize, columns, data }) => {
+const HeaderTable = ({  data }) => {
 	return (
 		<HeaderTableStyled>
 			<Grid columns={data.length} colSize={"260px"}  gap={0}>
