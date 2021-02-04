@@ -1,8 +1,7 @@
-import React, { useState,useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import BodyTable from "./BodyTable";
 import HeaderTable from "./HeaderTable";
-import { AppContext } from "../../hooks/useContextApp";
 
 
 const DataTableStyled = styled.div`
@@ -19,9 +18,7 @@ const DataTableStyled = styled.div`
 		//border: 1px solid red;
 	}
 `;
-const DataTable = () => {
-	const [colSize, setColSize] = useState("1fr");
-	const { data } = useContext(AppContext);
+const DataTable = ({data}) => {
 	
 	return (
 		<DataTableStyled>

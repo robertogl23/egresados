@@ -1,9 +1,8 @@
-import React,{useContext} from "react";
+import React from "react";
 import styled from "styled-components";
 import GridEstadisticas1 from "../components/dashboardGrid/GridEstadisticas1";
-import DataTable from "../components/dataTable/DataTable";
 import Card from "../components/shared/Card";
-import { AppContext } from "../hooks/useContextApp";
+import useSWR from "swr";
 
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
@@ -49,9 +48,15 @@ const HomeStyled = styled.main`
 		overflow-y: auto;
 	}
 `;
-
+const fetcher = (...args) =>
+	fetch(...args).then((res) => res.json());
 const Home = () => {
-	const { data } = useContext(AppContext);
+	const { data, error } = useSWR(
+		"http://localhost:4000/egresados/data",
+		fetcher
+	);
+	if (error) return <div>failed to load</div>;
+
 	return (
 		<HomeStyled>
 			<section className='section-dashboard'>
@@ -75,7 +80,15 @@ const Home = () => {
 					<section className='selection-grid-1'>
 						<div className='table'>
 							<Card>
-								<DataTable/>
+								{
+									!data ? (
+										"loading"
+									)
+									:(
+										"hola"
+
+									)
+								}
 							</Card>
 						</div>
 					</section>

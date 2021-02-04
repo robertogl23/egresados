@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logoTesi from "../../img/LOGO_TESI.png";
 import {
-	Link,
+	NavLink ,
 } from "react-router-dom";
 const HeaderStyled = styled.header`
 	//border: 1px solid red;
@@ -20,14 +20,17 @@ const HeaderStyled = styled.header`
 		width: 160px;
 		margin-left: 40px;
 	}
+	.selected{
+		color:red;
+	}
 `;
 const Header = () => {
 	return (
 		<HeaderStyled>
-			<Link to='/'><img src={logoTesi} alt='logo-tesi' /></Link>
+			<NavLink  to='/'><img src={logoTesi} alt='logo-tesi' /></NavLink >
 			
 			<li>
-				<Link to='/empleadores'>Empleadores</Link>
+				<NavLink  to='/empleadores' activeClassName="selected">Empleadores</NavLink  >
 			</li>
 		</HeaderStyled>
 	);
