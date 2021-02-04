@@ -85,7 +85,7 @@ const Home = () => {
 										"loading"
 									)
 									:(
-										"hola"
+										"hola que onda"
 
 									)
 								}
