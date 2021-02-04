@@ -4,8 +4,8 @@ const AsideEgresados = () => {
 	return (
 		<div>
 			<li>
-				<NavLink to='/egresados' activeClassName='selected'>
-					Egresados
+				<NavLink to='/egresados/sastifaccion' activeClassName='selected'>
+                sastifaccion
 				</NavLink>
 			</li>
 		</div>

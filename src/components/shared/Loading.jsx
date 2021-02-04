@@ -1,19 +1,16 @@
 import React from "react";
 import loading from "../../img/LOGO_TESI.png";
-const Loading = () => {
+import Loader from "react-loader-spinner";
+const Loading = ({typeSpinner}) => {
 	return (
 		<div className='content-loading'>
-			<div>
-				<img
-					className='loading-icon'
-					src={loading}
-					alt='loading'
-				/>
-			</div>
-			<div>
-				<span className="title-loadding">Sistema de Egresados y Empleadores</span>
-			</div>
-			
+			<Loader
+				type={typeSpinner}
+				color='#4e4e4e'
+				height={100}
+				width={100}
+				timeout={3000} //3 secs
+			/>
 		</div>
 	);
 };

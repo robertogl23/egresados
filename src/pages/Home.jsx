@@ -3,6 +3,7 @@ import styled from "styled-components";
 import GridEstadisticas1 from "../components/dashboardGrid/GridEstadisticas1";
 import Card from "../components/shared/Card";
 import useSWR from "swr";
+import Loading from "../components/shared/Loading";
 
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
@@ -82,7 +83,7 @@ const Home = () => {
 							<Card>
 								{
 									!data ? (
-										"loading"
+										<Loading typeSpinner={"TailSpin"}/>
 									)
 									:(
 										"hola que onda"

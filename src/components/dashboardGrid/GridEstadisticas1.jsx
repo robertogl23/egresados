@@ -6,6 +6,7 @@ import Card from "../shared/Card";
 import BarChart from "../charts/BarChart";
 import PieChart from "../charts/PieChart";
 import { LineChart } from "../charts/LineChart";
+import Loading from "../shared/Loading";
 const fetcher = (...args) =>
 	fetch(...args).then((res) => res.json());
 const GridEstadisticas1 = () => {
@@ -14,7 +15,7 @@ const GridEstadisticas1 = () => {
 		fetcher
 	);
 	if (error) return <div>failed to load</div>;
-	if (!data) return <div>loading...</div>;
+	if (!data) return <Loading  typeSpinner={"Grid"}/>;
 	return (
 		<Grid columns={3} rows={2} mq={false}>
 			<Box startCol={1} endCol={3}>

@@ -1,5 +1,6 @@
 import React from "react";
 import Chart from "react-google-charts";
+import Loading from "../shared/Loading";
 
 export const LineChart = ({data}) => {
 	return (
@@ -7,7 +8,7 @@ export const LineChart = ({data}) => {
 			width={"100%"}
 			height={"100%"}
 			chartType='LineChart'
-			loader={<div>Loading Chart</div>}
+			loader={<Loading  typeSpinner={"ThreeDots"}/>}
 			data={data}
 			options={{
 				hAxis: {

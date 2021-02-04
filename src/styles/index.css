@@ -61,13 +61,10 @@ body {
 	}
 }
 .content-loading {
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
-	animation: App-logo-float infinite 3s ease-in-out;
-	transform: rotateY(180deg);
 }
 .title-loadding {
 	margin-top: 50px;
