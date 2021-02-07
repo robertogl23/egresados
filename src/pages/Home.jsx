@@ -1,13 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import GridEstadisticas1 from "../components/dashboardGrid/GridEstadisticas1";
-import Card from "../components/shared/Card";
-import useSWR from "swr";
-<<<<<<< HEAD
-import Loading from "../components/shared/Loading";
-=======
+
+
 import GridDashBoard from "../components/dashboardEmpleadores/GridDashBoard";
->>>>>>> 2f427f75163944b2544aafd7b1559e00d4eb333f
 
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
@@ -53,14 +49,8 @@ const HomeStyled = styled.main`
 		overflow-y: auto;
 	}
 `;
-const fetcher = (...args) =>
-	fetch(...args).then((res) => res.json());
+
 const Home = () => {
-	const { data, error } = useSWR(
-		"http://localhost:4000/egresados/data",
-		fetcher
-	);
-	if (error) return <div>failed to load</div>;
 
 	return (
 		<HomeStyled>
@@ -83,19 +73,7 @@ const Home = () => {
 
 				<div className='content-grid'>
 					<section className='selection-grid-1'>
-						<div className='table'>
-							
-								{
-									!data ? (
-										<Loading typeSpinner={"TailSpin"}/>
-									)
-									:(
-									<GridDashBoard/>	
-
-									)
-								}
-							
-						</div>
+						<GridDashBoard />
 					</section>
 				</div>
 			</section>

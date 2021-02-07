@@ -1,5 +1,4 @@
 import React from "react";
-import loading from "../../img/LOGO_TESI.png";
 import Loader from "react-loader-spinner";
 const Loading = ({typeSpinner}) => {
 	return (
