@@ -8,6 +8,11 @@ body {
 	background: #f1f0f06e;
 	font-family: "Open Sans", sans-serif;
 }
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
 .app {
 	height: 100vh;
 }
@@ -61,13 +66,10 @@ body {
 	}
 }
 .content-loading {
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
-	animation: App-logo-float infinite 3s ease-in-out;
-	transform: rotateY(180deg);
 }
 .title-loadding {
 	margin-top: 50px;
@@ -77,4 +79,22 @@ body {
 .subtitle-loading {
 	margin-top: 8px;
 	font-size: 10px;
+}
+
+.egresados-router{
+	/**border: 1px solid rgb(5, 66, 197);*/
+	height: auto;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	
+	
+}
+.section-egresados{
+	/**border: 1px solid rgb(201, 103, 12);*/
+	padding-left: 13em;
+	width: 100%;
+	height: 100vh;
+	overflow-x: hidden;
 }
