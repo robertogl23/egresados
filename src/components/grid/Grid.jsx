@@ -8,7 +8,7 @@ const Content = styled.div`
 		${(props) => props.col},
 		${(props) => props.colSize}
 	);
-	grid-template-rows: repeat(${(props) => props.rows}, 1fr);
+	grid-template-rows: repeat(${(props) => props.rows},${(props) => props.medidaRows} );
 	grid-gap: ${(props) => props.gap}em;
 	height: ${(props) => props.height};
 	width: ${(props) => props.width};
@@ -31,6 +31,7 @@ const Grid = ({
 	height,
 	colSize,
 	boxShadow,
+	medidaRows,
 }) => (
 	<Content
 		rows={rows}
@@ -41,6 +42,7 @@ const Grid = ({
 		height={height}
 		colSize={colSize}
 		boxShadow={boxShadow}
+		medidaRows={medidaRows}
 	>
 		{children}
 	</Content>
@@ -65,5 +67,6 @@ Grid.defaultProps = {
 	height: "100%",
 	colSize: "1fr",
 	boxShadow: true,
+	medidaRows: "1fr",
 };
 export { Grid };

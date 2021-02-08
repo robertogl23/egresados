@@ -67,7 +67,7 @@ const Home = () => {
 				</div>
 				<div className='content-dashboard-header'>
 					<section className='section-header'>
-						<h1>Respuestas</h1>
+						<h1>Estadisticas Empleadores</h1>
 					</section>
 				</div>
 
