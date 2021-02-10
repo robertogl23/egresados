@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import AsideEgresados from "../components/AsideEgresados/AsideEgresados";
 import EgresadosMain from "../pages/egresadosPages/EgresadosMain";
 import PerfilEgresados from "../pages/egresadosPages/PerfilEgresados";
-import SatisfaccionEgresados from "../pages/egresadosPages/SatisfaccionEgresados";
+import UbicacionEgresados from "../pages/egresadosPages/UbicacionEgresados";
 const EgresadosRouter = () => {
 	return (
 		<div className="egresados-router">
@@ -17,8 +17,8 @@ const EgresadosRouter = () => {
 					/>
 					<Route
 						
-						path='/egresados/sastifaccion'
-						component={SatisfaccionEgresados}
+						path='/egresados/ubicacion-egresados'
+						component={UbicacionEgresados}
 					/>
 					<Route
 						exact

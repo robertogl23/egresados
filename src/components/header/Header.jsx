@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import logoTesi from "../../img/LOGO_TESI.png";
-import {
-	NavLink ,
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const HeaderStyled = styled.header`
-	//border: 1px solid red;
+
 	height: 64px;
 	width: 100%;
 	position: sticky;
@@ -16,25 +14,60 @@ const HeaderStyled = styled.header`
 		0 1px 2px rgba(0, 0, 0, 0.24);
 	display: flex;
 	align-items: center;
+	justify-content:space-between;
+	padding-left:60px;
+	padding-right:60px;
 	img {
 		width: 160px;
-		margin-left: 40px;
 	}
-	.selected{
-		color:red;
+
+	ul{
+		display: flex;
+		flex-direction:row;
+	}
+	li{
+		margin-left:16px;
+	}
+	a{
+		text-decoration:none;
 	}
 `;
 const Header = () => {
 	return (
 		<HeaderStyled>
-			<NavLink  to='/'><img src={logoTesi} alt='logo-tesi' /></NavLink >
-			
-			<li>
-				<NavLink  to='/empleadores' activeClassName="selected">Empleadores</NavLink  >
-			</li>
-			<li>
-				<NavLink  to='/egresados' activeClassName="selected">Egresados</NavLink  >
-			</li>
+			<div>
+				<NavLink to='/'>
+					<img src={logoTesi} alt='logo-tesi' />
+				</NavLink>
+			</div>
+
+				<ul>
+
+					<li>
+						<NavLink
+							exact
+							to='/'
+							activeClassName='selected'
+						>
+							Inicio
+						</NavLink>
+					</li>
+
+					<li>
+						<NavLink
+							to='/empleadores'
+							activeClassName='selected'
+						>
+							Empleadores
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to='/egresados' activeClassName='selected'>
+							Egresados
+						</NavLink>
+					</li>
+				</ul>
+
 		</HeaderStyled>
 	);
 };
