@@ -13,6 +13,9 @@ const BarChart = ({data}) => {
 			}
 			options={{
 				legend: { position: "top" },
+				hAxis: {
+					title: "Numero de empleadores que a respondido",
+				},
 			}}
 			rootProps={{ "data-testid": "3" }}
 		/>
