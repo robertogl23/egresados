@@ -120,8 +120,8 @@ const EgresadosMain = () => {
 					</div>
 					<div className='content-2'>
 						<div className='grid-2'>
-							<Grid columns={3}>
-								<Box>
+							<Grid columns={3} >
+								<Box startRow={1} endRow={3}>
 									<Card>
 										<div className='contenedor'>
 											<div className='textcent'>
