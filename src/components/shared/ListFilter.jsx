@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React,{useContext, useEffect} from "react";
 import { AppContext } from "../../hooks/useContextApp";
 
 const ListFilter = ({ data }) => {
@@ -8,12 +8,20 @@ const ListFilter = ({ data }) => {
     const handleClick = (e) => {
 		if(!preguntasFilter){
 			return setPreguntasFilter(false)
-
 		}
         const d = preguntas[data.findIndex( ele => ele.trim() === e.target.innerText)]
+
+		const elements = document.getElementsByClassName("hola")
+		const elements2 = document.getElementById(e.target.id)
+		for(e of elements){
+			e.classList.remove("hola")
+		}
+		elements2.classList.add("hola")
+
+
 		setSelectUser(true)
         setPreguntasFilter([d])
-        setIndexEgresado(data.findIndex( ele => ele.trim() === e.target.innerText))
+        setIndexEgresado(elements2.id)
     }
 	return (
 		<div className='claselista'>
@@ -22,7 +30,7 @@ const ListFilter = ({ data }) => {
 					? "no hay información"
 					: data.map((e, i) => (
 							<li key={i} id={i}  className='borderx2 dedito' onClick={handleClick}>
-								<div className='cont-list'>{e}</div>
+								<div id={i} className='cont-list'>{e}</div>
 							</li>
 					  ))}
 			</ul>

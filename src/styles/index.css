@@ -132,7 +132,7 @@ ul{
 .contenedor-card-2{
 	width: 80%;
 	text-align: center;
-	height: 380px;
+	height: 450px;
 	overflow-x: auto;
 	margin-top: 2px;
 	padding: 6px;
@@ -190,16 +190,27 @@ a {
 	text-decoration: none;
 	color: #000;
 }
-
-
-.dedito:active{
-	background: rgba(138, 138, 138, 0.171);
-	border-radius: 9px;
-
-}
-.dedito:focus{
-	background-color: red;
-}
 .dedito:hover{
 	cursor: pointer;
+}
+.hola{
+	background: #17d14f;
+	border-radius: 9px;
+	color: white;
+
+}
+
+.contenedor-card-3{
+	width: 95%;
+	text-align: left;
+	height: 220px;
+	overflow-x: auto;
+	margin-top: 2px;
+	padding: 6px;
+	
+}
+
+.content-egresados{
+	height: 100%;
+	width: 100%;
 }
