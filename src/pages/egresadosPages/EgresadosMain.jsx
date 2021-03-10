@@ -10,6 +10,7 @@ import Loading from "../../components/shared/Loading";
 import { AppContext } from "../../hooks/useContextApp";
 import ListFilter from "../../components/shared/ListFilter";
 import GridEstadisticas1 from "../../components/dashboardGrid/GridEstadisticas1";
+import DataTable from "../../components/dataTable/DataTable";
 
 const EgresadosMainStyled = styled.div`
 	// border:1px solid #8c00ff;
@@ -35,7 +36,7 @@ const EgresadosMainStyled = styled.div`
 	}
 	.grid {
 		//border: 1px solid #0044ff;
-		height: 180px;
+		height: 780px;
 		width: 85%;
 	}
 	.card-title {
@@ -80,92 +81,128 @@ const EgresadosMain = () => {
 	return (
 		<EgresadosMainStyled>
 			<div className='egresados-main'>
-				<div className='title'>
-					<h2>Sistema Egresados</h2>
-				</div>
 				<div className='content'>
 					<div className='grid'>
-						<Grid columns={3}>
-							<Box>
+						<Grid columns={6} rows={6}>
+							<Box
+								startCol={1}
+								endCol={3}
+								startRow={1}
+								endRow={3}
+							>
+								<Card></Card>
+							</Box>
+							<Box
+								startCol={3}
+								endCol={5}
+								startRow={1}
+								endRow={3}
+							>
+								<Card></Card>
+							</Box>
+							<Box
+								startCol={5}
+								endCol={7}
+								startRow={1}
+								endRow={3}
+							>
+								<Card></Card>
+							</Box>
+							<Box
+								startCol={1}
+								endCol={3}
+								startRow={3}
+								endRow={7}
+							>
 								<Card>
-									<div className='card-title'>
-										<h4>Respuestas Totales</h4>
-										<div className='content-text'>
-											<span>{data.numeroEgresados}</span>
+									<div className='contenedor'>
+										<div className='textcent'>
+											<div className='fijo'>
+												<h4>Nombres de Egresados</h4>
+											</div>
+											<div className='contenedor-card-2'>
+												<ListFilter data={data.nombres} />
+											</div>
 										</div>
 									</div>
 								</Card>
 							</Box>
-							<Box>
+							<Box
+								startCol={3}
+								endCol={7}
+								startRow={3}
+								endRow={5}
+							>
 								<Card>
-									<div className='card-title'>
-										<h4>Egresados Titulados Totales</h4>
-										<div className='content-text'>
-											<span>{data.titulados}</span>
+									<div className='contenedor'>
+										<div className='textcent'>
+											<div className='fijo'>
+												<h4>Perfil Egresado</h4>
+											</div>
+											<div className='contenedor-card-3'>
+												{selectUser ? (
+													loading ? (
+														<Loading typeSpinner='TailSpin' />
+													) : (
+														<div className='content-egresados'>
+															<DataTable
+																headers={[
+																	"Nombre",
+																	"Matricula",
+																	"Correo",
+																	"Telefono",
+																]}
+																body={[
+																	"nombre",
+																	"matricula",
+																	"correo",
+																	"telefono",
+																]}
+															/>
+														</div>
+													)
+												) : (
+													<span>
+														No ha seleccionado nombre de
+														egresado
+													</span>
+												)}
+											</div>
 										</div>
 									</div>
 								</Card>
 							</Box>
-							<Box>
+							<Box
+								startCol={3}
+								endCol={7}
+								startRow={5}
+								endRow={7}
+							>
 								<Card>
-									<div className='card-title'>
-										<h4>Egresados con empleo</h4>
-										<div className='content-text'>
-											<span>{data.data3}</span>
+									<div className='contenedor'>
+										<div className='textcent'>
+											<div className='fijo'>
+												<Select1 options={data.preguntas} />
+											</div>
+											<div className='contenedor-card-3'>
+												{selectUser ? (
+													loading ? (
+														<Loading typeSpinner='TailSpin' />
+													) : (
+														<List data={preguntasFilter} />
+													)
+												) : (
+													<span>
+														No ha seleccionado nombre de
+														egresado
+													</span>
+												)}
+											</div>
 										</div>
 									</div>
 								</Card>
 							</Box>
 						</Grid>
-					</div>
-					<div className='content-2'>
-						<div className='grid-2'>
-							<Grid columns={3}>
-								<Box>
-									<Card>
-										<div className='contenedor'>
-											<div className='textcent'>
-												<div className='fijo'>
-													<h4>Nombres de Egresados</h4>
-												</div>
-												<div className='contenedor-card-2'>
-													<ListFilter data={data.nombres} />
-												</div>
-											</div>
-										</div>
-									</Card>
-								</Box>
-								<Box startCol={2} endCol={4}>
-									<Card>
-										<div className='contenedor'>
-											<div className='textcent'>
-												<div className='fijo'>
-													<Select1
-														options={data.preguntas}
-													/>
-												</div>
-												<div className='contenedor-card-2'>
-													{selectUser ? (
-														loading ? (
-															<Loading typeSpinner='TailSpin' />
-														) : (
-															<List
-																data={preguntasFilter}
-															/>
-														)
-													) : (
-														<span>
-															No ha seleccionado nombre de
-															egresado
-														</span>
-													)}
-												</div>
-											</div>
-										</div>
-									</Card>
-								</Box>
-							</Grid>
-						</div>
 					</div>
 				</div>
 			</div>

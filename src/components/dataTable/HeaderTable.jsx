@@ -17,9 +17,9 @@ const HeaderTableStyled = styled.div`
 const BoxStyled = styled.div`
 	//border-right: .8px solid #fd92f4;
 	width: 100%;
-	height: 60px;
+	height: 60%;
 	.content-text {
-		//border: .8px solid #b292fd;
+		border: .8px solid #b292fd;
 		height: 100%;
 		width: 100%;
 		display: flex;
@@ -60,7 +60,7 @@ const BoxStyled = styled.div`
 const HeaderTable = ({  data }) => {
 	return (
 		<HeaderTableStyled>
-			<Grid columns={data.length} colSize={"260px"}  gap={0}>
+			<Grid columns={data.length}  gap={0}>
 				{
 					data.map((e,i) => (
 						<Box key={i}>
