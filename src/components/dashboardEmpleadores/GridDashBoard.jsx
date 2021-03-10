@@ -41,16 +41,6 @@ const GridDashBoard = () => {
 					<BarChart data={data.estadistica5} />
 				</Card>
 			</Box>
-			<Box startCol={4} endCol={7}>
-				<Card>
-					<PieChart
-						title={
-							"Nivel de valores de los egresados"
-						}
-						data={data.estadistica3}
-					/>
-				</Card>
-			</Box>
 			
 		</Grid>
 		

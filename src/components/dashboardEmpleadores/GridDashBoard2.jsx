@@ -17,16 +17,7 @@ const GridDashBoard2 = () => {
 	if (!data) return <Loading typeSpinner={"Grid"} />;
 	return (
 		<Grid columns={6} rows={2}>
-			<Box startCol={4} endCol={7}>
-				<Card>
-					<PieChart
-						title={
-							"Nivel de valores de los empleadores"
-						}
-						data={data.estadistica3}
-					/>
-				</Card>
-			</Box>
+			
            
 		</Grid>
 		

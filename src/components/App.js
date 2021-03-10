@@ -6,7 +6,7 @@ const App = () => {
 	
 	const [preguntasFilter, setPreguntasFilter] = useState([])
 	const [loading, setLoading] = useState(false)
-	const [indexEgresado, setIndexEgresado] = useState(null)
+	const [indexEgresado, setIndexEgresado] = useState()
 	const [preguntas, setPreguntas] = useState([null])
 	const [selectUser, setSelectUser] = useState(false)
 	return (
