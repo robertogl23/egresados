@@ -17,7 +17,7 @@ const GridEstadisticas1 = () => {
 	if (error) return <div>failed to load</div>;
 	if (!data) return <Loading typeSpinner={"Grid"} />;
 	return (
-		<Grid columns={50} rows={50} mq={false}>
+		<Grid columns={4} rows={5} mq={false}>
 			<Box startCol={1} endCol={3}>
 				<Card>
 					<BarChart data={data.carreras} />
