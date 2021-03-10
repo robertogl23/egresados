@@ -8,7 +8,7 @@ import BarChart from "../charts/BarChart";
 import Loading from "../shared/Loading";
 const fetcher = (...args) =>
 	fetch(...args).then((res) => res.json());
-const GridDashBoard = () => {
+const GridDashBoard2 = () => {
 	const { data, error } = useSWR(
 		"http://localhost:4000/empleadores/data/dashboard",
 		fetcher
@@ -17,44 +17,20 @@ const GridDashBoard = () => {
 	if (!data) return <Loading typeSpinner={"Grid"} />;
 	return (
 		<Grid columns={6} rows={2}>
-			
-			<Box startCol={1} endCol={4}>
-				<Card>
-					<PieChart
-						title={"Que tipo empresas hay"}
-						data={data.estadistica1}
-					/>
-				</Card>
-			</Box>
 			<Box startCol={4} endCol={7}>
 				<Card>
 					<PieChart
 						title={
-							"Carreras de los egresados que contratan los empleadores"
-						}
-						data={data.estadistica2}
-					/>
-				</Card>
-			</Box>
-			<Box startCol={-7} endCol={-1}>
-				<Card>
-					<BarChart data={data.estadistica5} />
-				</Card>
-			</Box>
-			<Box startCol={4} endCol={7}>
-				<Card>
-					<PieChart
-						title={
-							"Nivel de valores de los egresados"
+							"Nivel de valores de los empleadores"
 						}
 						data={data.estadistica3}
 					/>
 				</Card>
 			</Box>
-			
+           
 		</Grid>
 		
 	);
 };
 
-export default GridDashBoard;
+export default GridDashBoard2;

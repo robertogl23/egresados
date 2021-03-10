@@ -1,29 +1,30 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
 
 const List = ({ data }) => {
-    return (
-        <div className='claselista'>
-            <ul>
-                {
-                    !data ? ('no hay información')
-                        : (
-                            data.map(e=>(<li className='borderx2'>
-                            {e}
-                        </li>))
-                        )
-                }
-
-            </ul>
 
 
+	return (
+		<div className='claselista'>
+			<ul>
+				{!data
+					? "no hay información"
+					: data.map((e, i) => (
+							<li key={i} className='borderx2'>
+								<div className='cont-list'>{
+									!e || !e[0] ?(
+										"No ha respondido"
+									):(
+										e
+									)
 
-        </div>
-    )
-}
+								}</div>
+							</li>
+					  ))}
+			</ul>
+		</div>
+	);
+};
 
-List.propTypes = {
 
-}
 
-export default List
+export default List;

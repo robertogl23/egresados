@@ -16,11 +16,6 @@ const AsideEgresadosStyled = styled.div`
 		//border:1px solid red;
 		height: auto;
 	}
-	.selected {
-		//border:1px solid #159756;
-
-		color: red;
-	}
 	ul {
 		height: 100%;
 		width: 100%;
@@ -33,9 +28,6 @@ const AsideEgresadosStyled = styled.div`
 		padding-left: 10px;
 		//border:1px solid red;
 	}
-	a {
-		text-decoration: none;
-	}
 `;
 const AsideEgresados = () => {
 	return (
@@ -46,13 +38,12 @@ const AsideEgresados = () => {
 				</div>
 				<nav>
 					<ul>
-						
 						<li>
 							<NavLink
-								to='/egresados/sastifaccion'
+								to='/egresados/ubicacion-egresados'
 								activeClassName='selected'
 							>
-								Satisfaccion de Egresados
+								Ubicacion Laboral
 							</NavLink>
 						</li>
 
