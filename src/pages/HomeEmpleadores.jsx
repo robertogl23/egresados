@@ -13,6 +13,8 @@ import BarChart from '../components/charts/BarChart';
 import PieChart from '../components/charts/PieChart';
 import ListFilter from '../components/shared/ListFilter';
 import { LineChart } from '../components/charts/LineChart';
+import useFetch from '../hooks/useFetch';
+import ListFiler2 from '../components/shared/ListFiler2';
 
 
 
@@ -60,153 +62,164 @@ const HomeStyled = styled.main`
 		overflow-y: auto;
 	}
 `;
-const fetcher = (...args) =>
-	fetch(...args).then((res) => res.json());
+
 const HomeEmpleadores = props => {
-    const { data, error } = useSWR(
-		"http://localhost:4000/empleadores/data/dashboard",
-        fetcher
+	const { data, loading } = useFetch("http://localhost:4000/empleadores/data/dashboard")
+	return (
 
-    );
-    if (error) return <div>failed to load</div>;
-	if (!data) return <Loading typeSpinner={"Grid"} />;
-    return (
-        
-            <div className='centrado'>
-			<div className='estilos-grid'>
-				<div className='title-co1'>
-					<h1>Perfil de Empleadores</h1>
+		<>
+			{loading ? (
+				"loading"
+			) : (<div className='centrado'>
+				<div className='estilos-grid'>
+					<div className='title-co1'>
+						<h1>Perfil de Empleadores</h1>
+					</div>
+
+					<Grid columns={2} rows={7} medidaRows={"300px"}>
+						<Box>
+							<Card>
+								<div className='contenedor'>
+									<div className='textcent'>
+										<div className='fijo'>
+											<h2>Nombre del empleador</h2>
+										</div>
+										<div className='contenedor-card'>
+											<div className='border'>
+												<List data={data.estadistica6} />
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</Card>
+						</Box>
+
+
+						<Box>
+							<Card>
+								<div className='contenedor'>
+									<div className='textcent'>
+										<div className='fijo'>
+											<h2>Telefono</h2>
+										</div>
+										<div className='contenedor-card'>
+											<div className='border'>
+												<List data={data.estadistica7} />
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</Card>
+						</Box>
+						<Box>
+							<Card>
+								<div className='contenedor'>
+									<div className='textcent'>
+										<div className='fijo'>
+											<h2>Correos Electronicos</h2>
+										</div>
+										<div className='contenedor-card'>
+											<div className='border'>
+												<List data={data.estadistica8} />
+											</div>
+										</div>
+									</div>
+								</div>
+							</Card>
+						</Box>
+						<Box>
+							<Card>
+								<div className='contenedor'>
+									<div className='textcent'>
+										<div className='fijo'>
+											<h2>Nombre comercial de la empresa</h2>
+										</div>
+										<div className='contenedor-card'>
+											<div className='border'>
+												<List data={data.estadistica9} />
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</Card>
+						</Box>
+
+						<Box>
+							<Card>
+								<div className='contenedor'>
+									<div className='textcent'>
+										<div className='fijo'>
+											<h2>Conocimeientos de los egresados</h2>
+										</div>
+										<div className='contenedor-card'>
+											<div className='border'>
+												<PieChart data={data.estadistica3} />
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</Card>
+						</Box>
+						<Box>
+							<Card>
+								<div className='contenedor'>
+									<div className='textcent'>
+										<div className='fijo'>
+											<h2>Nivel de valores de los egresados</h2>
+										</div>
+										<div className='contenedor-card'>
+											<div className='border'>
+												<PieChart data={data.estadistica5} />
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</Card>
+						</Box>
+						<Box startCol={1} endCol={3}>
+							<Card>
+								<div className='contenedor'>
+									<div className='textcent'>
+										<div className='fijo'>
+											<h2>Nivel jerarquico del egresado</h2>
+										</div>
+										<div className='contenedor-card'>
+											<div className='border'>
+												<LineChart data={data.estadistica10} text1={"Tamaño de la empresa"} text2={"Numero de empleadores"} />
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</Card>
+						</Box>
+						<Box>
+							<Card>
+							<div className='contenedor'>
+										<div className='textcent'>
+											<div className='fijo'>
+												<h4>Nombres de Empleador</h4>
+											</div>
+											<div className='contenedor-card-2'>
+												<ListFiler2 data={data.estadistica6} />
+											</div>
+										</div>
+									</div>		
+						</Card>
+						</Box>
+					</Grid>
+
 				</div>
-				
-				<Grid columns={2} rows={1} medidaRows={"300px"}>
-					<Box>
-						<Card>
-							<div className='contenedor'>
-								<div className='textcent'>
-									<div className='fijo'>
-										<h2>Nombre del empleador</h2>
-									</div>
-									<div className='contenedor-card'>
-										<div className='border'>
-											<List data={data.estadistica6}/>
 
-										</div>
-									</div>
-								</div>
-							</div>
-						</Card>
-					</Box>
-                   
-                   
-					<Box>
-						<Card>
-							<div className='contenedor'>
-								<div className='textcent'>
-									<div className='fijo'>
-										<h2>Telefono</h2>
-									</div>
-									<div className='contenedor-card'>
-										<div className='border'>
-											<List data={data.estadistica7}/>
-                                            
-										</div>
-									</div>
-								</div>
-							</div>
-						</Card>
-					</Box>
-                    <Box>
-						<Card>
-							<div className='contenedor'>
-								<div className='textcent'>
-									<div className='fijo'>
-										<h2>Correos Electronicos</h2>
-									</div>
-									<div className='contenedor-card'>
-										<div className='border'>
-											<List data={data.estadistica8}/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</Card>
-					</Box>					
-					<Box>
-						<Card>
-							<div className='contenedor'>
-								<div className='textcent'>
-									<div className='fijo'>
-										<h2>Nombre comercial de la empresa</h2>
-									</div>
-									<div className='contenedor-card'>
-										<div className='border'>
-											<List data={data.estadistica9}/>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</Card>
-					</Box>
-					
-					<Box>
-						<Card>
-							<div className='contenedor'>
-								<div className='textcent'>
-									<div className='fijo'>
-										<h2>Conocimeientos de los egresados</h2>
-									</div>
-									<div className='contenedor-card'>
-										<div className='border'>
-											<PieChart data={data.estadistica3}/>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</Card>
-					</Box>
-					<Box>
-						<Card>
-							<div className='contenedor'>
-								<div className='textcent'>
-									<div className='fijo'>
-										<h2>Nivel de valores de los egresados</h2>
-									</div>
-									<div className='contenedor-card'>
-										<div className='border'>
-											<PieChart data={data.estadistica5}/>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</Card>
-					</Box>
-					<Box>
-						<Card>
-							<div className='contenedor'>
-								<div className='textcent'>
-									<div className='fijo'>
-										<h2>Nivel jerarquico del egresado</h2>
-									</div>
-									<div className='contenedor-card'>
-										<div className='border'>
-											<BarChart data={data.estadistica10}/>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</Card>
-					</Box>
-				    </Grid>	
-
-                    </div>
-				
-        </div>
-		
-    )
+			</div>
+				)}
+		</>
+	)
 }
 
 export default HomeEmpleadores

@@ -8,7 +8,12 @@ const App = () => {
 	const [loading, setLoading] = useState(false)
 	const [indexEgresado, setIndexEgresado] = useState()
 	const [preguntas, setPreguntas] = useState([null])
+	const [preguntas2, setPreguntas2] = useState([null])
+	const [preguntasFilter2,setPreguntasFilter2] = useState([])
 	const [selectUser, setSelectUser] = useState(false)
+	const [indexEmple, setindexEmple] = useState ()
+	
+
 	return (
 		<div className='app'>
 		
@@ -22,7 +27,12 @@ const App = () => {
 					preguntas,
 					setPreguntas,
 					selectUser,
-					setSelectUser
+					setSelectUser,
+					preguntas2,
+					setPreguntasFilter2,
+					indexEmple,
+					setindexEmple,
+
 				 }}>
 					<AppRouter/>
 					

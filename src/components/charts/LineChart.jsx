@@ -2,7 +2,7 @@ import React from "react";
 import Chart from "react-google-charts";
 import Loading from "../shared/Loading";
 
-export const LineChart = ({data}) => {
+export const LineChart = ({data, text1, text2}) => {
 	return (
 		<Chart
 			width={"100%"}
@@ -12,10 +12,12 @@ export const LineChart = ({data}) => {
 			data={data}
 			options={{
 				hAxis: {
-					title: "Año",
+					title: text1,
+					
+					
 				},
 				vAxis: {
-					title: "Numero de egresados titulados",
+					title: text2,
 				},
 			}}
 			rootProps={{ "data-testid": "1" }}
