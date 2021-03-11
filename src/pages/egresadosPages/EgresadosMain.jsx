@@ -162,6 +162,10 @@ const EgresadosMain = () => {
 													<div className='content-egresados'>
 														<button onClick={() => getHttp(correoEgresados[0])}>Enviar Correo</button>
 														<p>correo:{correoEgresados}</p>
+														<p>correo:{correoEgresados}</p>
+														<p>correo:{correoEgresados}</p>
+														<p>correo:{correoEgresados}</p>
+														<p>correo:{correoEgresados}</p>
 													</div>
 												
 												) : (
