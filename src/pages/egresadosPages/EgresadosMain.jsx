@@ -63,6 +63,15 @@ const EgresadosMainStyled = styled.div`
 		font-weight: 900;
 		padding-top: 20px;
 	}
+	.datos-egresados1 {
+		font-weight: bold;
+		// margin-top: 10px;
+		// margin-bottom: 10px;
+	}
+	.datos-egresados {
+		font-weight: bold;
+		// margin-bottom: 10px;
+	}
 `;
 
 const fetcher = (...args) =>
@@ -160,12 +169,23 @@ const EgresadosMain = () => {
 												{selectUser ? (
 													
 													<div className='content-egresados'>
+<<<<<<< HEAD
 														<button onClick={() => getHttp(correoEgresados[0])}>Enviar Correo</button>
 														<p>correo:{correoEgresados}</p>
 														<p>correo:{correoEgresados}</p>
 														<p>correo:{correoEgresados}</p>
 														<p>correo:{correoEgresados}</p>
 														<p>correo:{correoEgresados}</p>
+=======
+														<button onClick={() => getHttp(correoEgresados[0])}>Enviar Correo
+														</button>
+														<p >Correo:<span>{correoEgresados}</span></p>
+														<p >Nombre Completo:{}</p>
+														<p >Telefono:{}</p>
+														<p >Carrera:{}</p>
+														<p >Matricula:{}</p>
+														
+>>>>>>> fc777f18c35a418912e4593a7fb432b2d86776a5
 													</div>
 												
 												) : (
