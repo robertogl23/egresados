@@ -11,7 +11,6 @@ const useFetch = (url) => {
         fetch(url)
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
             setstate({
                 loading:false,
                 error:null,
