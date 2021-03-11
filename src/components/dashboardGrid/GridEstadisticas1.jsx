@@ -15,9 +15,9 @@ const GridEstadisticas1 = () => {
 		"http://localhost:4000/egresados/data/dashboard"
 	);
 	return (
-		<div>
+		<>
 			{loading ? (
-				"loding"
+				<Loading typeSpinner={"Grid"}/>
 			) : (
 				<Grid columns={2} rows={20} mq={false}>
 					<Box height={240} unidadMedida={"px"}>
@@ -218,7 +218,7 @@ const GridEstadisticas1 = () => {
 					</Box>
 				</Grid>
 			)}
-		</div>
+		</>
 	);
 };
 
