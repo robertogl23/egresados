@@ -4,8 +4,8 @@ import Loading from "../shared/Loading";
 const BarChart = ({data}) => {
 	return (
 		<Chart
-			width={"100%"}
-			height={"100%"}
+			width={"110%"}
+			height={"110%"}
 			chartType='BarChart'
 			loader={<Loading typeSpinner={"ThreeDots"}/>}
 			data={
