@@ -13,14 +13,14 @@ const EgresadosMain2Styled = styled.div`
 height: auto;
 width: 100%;
 .grid{
-    height: 500px;
+    height: 780px;
     padding: 1em;
 }
 `;
 const EgresadosMain2 = () => {
     const {
         preguntasFilter,
-        loading,
+     
         selectUser,
         correoEgresados,
     } = useContext(AppContext);
