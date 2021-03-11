@@ -14,6 +14,9 @@ const App = () => {
 	const [indexEmple, setindexEmple] = useState ()
 	const [nombreEgresados, setNombreEgresados] = useState ()
 	const [correoEgresados, setCorreoEgresados] = useState ()
+	const [matriculaEgresados, setMatriculaEgresados] = useState ()
+	const [carreraEgresados, setCarreraEgresados] = useState ()
+	const [telEgresados, setTelEgresados] = useState ()
 
 
 	return (
@@ -37,8 +40,13 @@ const App = () => {
 					nombreEgresados,
 					setNombreEgresados,
 					correoEgresados,
-					setCorreoEgresados
-
+					setCorreoEgresados,
+					matriculaEgresados, 
+					setMatriculaEgresados,
+					carreraEgresados, 
+					setCarreraEgresados,
+					telEgresados,
+					setTelEgresados
 				 }}>
 					<AppRouter/>
 					

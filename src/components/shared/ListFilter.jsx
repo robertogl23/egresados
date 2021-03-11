@@ -10,6 +10,10 @@ const ListFilter = ({ data }) => {
 		setIndexEgresado,
 		correoEgresados,
 		setCorreoEgresados,
+		setNombreEgresados,
+		setMatriculaEgresados,
+		setCarreraEgresados,
+		setTelEgresados
 	} = useContext(AppContext);
 	function getHttp(id) {
 		fetch(
@@ -18,6 +22,10 @@ const ListFilter = ({ data }) => {
 			.then((res) => res.json())
 			.then((data) => {
 				setCorreoEgresados(data.correos)
+				setNombreEgresados(data.nombre)
+				setMatriculaEgresados(data.matricula)
+				setCarreraEgresados(data.carrera)
+				setTelEgresados(data.tel)
 			});
 	}
 	const handleClick = (e) => {
