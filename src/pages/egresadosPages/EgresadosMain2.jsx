@@ -16,11 +16,24 @@ width: 100%;
     height: 780px;
     padding: 1em;
 }
+.datos-egresados{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.datos-egresados2{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+span {
+    margin-left: 5px;
+    font-weight: normal;
+}
 `;
 const EgresadosMain2 = () => {
     const {
         preguntasFilter,
-     
+
         selectUser,
         correoEgresados,
     } = useContext(AppContext);
@@ -102,11 +115,11 @@ const EgresadosMain2 = () => {
                                                 <div className='content-egresados'>
                                                     <button onClick={() => getHttp(correoEgresados[0])}>Enviar Correo
 														</button>
-                                                    <p >Correo:<span>{correoEgresados}</span></p>
-                                                    <p >Nombre Completo:{ }</p>
-                                                    <p >Telefono:{ }</p>
-                                                    <p >Carrera:{ }</p>
-                                                    <p >Matricula:{ }</p>
+                                                    <p className='datos-egresados2'>Correo:<span>{correoEgresados}</span></p>
+                                                    <p className='datos-egresados'>Nombre Completo:{ }</p>
+                                                    <p className='datos-egresados'>Telefono:{ }</p>
+                                                    <p className='datos-egresados'>Carrera:{ }</p>
+                                                    <p className='datos-egresados'>Matricula:{ }</p>
 
                                                 </div>
 
