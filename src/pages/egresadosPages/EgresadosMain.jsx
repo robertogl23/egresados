@@ -11,7 +11,8 @@ import { AppContext } from "../../hooks/useContextApp";
 import ListFilter from "../../components/shared/ListFilter";
 import GridEstadisticas1 from "../../components/dashboardGrid/GridEstadisticas1";
 import DataTable from "../../components/dataTable/DataTable";
-
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 const EgresadosMainStyled = styled.div`
 	// border:1px solid #8c00ff;
 	height: 100%;
@@ -63,26 +64,42 @@ const EgresadosMainStyled = styled.div`
 		padding-top: 20px;
 	}
 `;
+
 const fetcher = (...args) =>
 	fetch(...args).then((res) => res.json());
 const EgresadosMain = () => {
-	const { data, error } = useSWR(
-		"http://localhost:4000/egresados/egresados-main",
-		fetcher
-	);
 	const {
 		preguntasFilter,
 		loading,
 		selectUser,
+		correoEgresados,
 	} = useContext(AppContext);
+	const { data, error } = useSWR(
+		"http://localhost:4000/egresados/egresados-main",
+		fetcher
+	);
+	function getHttp(correo) {
+		console.log(correoEgresados[0]);
+		fetch(`http://localhost:4000/enviodecorreos/send-email/${correo}`)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);		
+			});
+	}
+
 	if (error) return <div>failed to load</div>;
 	if (!data) return <Loading typeSpinner={"Grid"} />;
 
 	return (
 		<EgresadosMainStyled>
-			<div className='egresados-main'>
+			<div className='egresados-main' ref={ref}>
 				<div className='content'>
-					<div className='grid'>
+					<Pdf targetRef={ref} filename='code-example.pdf'>
+						{({ toPdf }) => (
+							<button onClick={toPdf}>Generate Pdf</button>
+						)}
+					</Pdf>
+					<div className='grid' ref={ref}>
 						<Grid columns={6} rows={6}>
 							<Box
 								startCol={1}
@@ -141,26 +158,12 @@ const EgresadosMain = () => {
 											</div>
 											<div className='contenedor-card-3'>
 												{selectUser ? (
-													loading ? (
-														<Loading typeSpinner='TailSpin' />
-													) : (
-														<div className='content-egresados'>
-															<DataTable
-																headers={[
-																	"Nombre",
-																	"Matricula",
-																	"Correo",
-																	"Telefono",
-																]}
-																body={[
-																	"nombre",
-																	"matricula",
-																	"correo",
-																	"telefono",
-																]}
-															/>
-														</div>
-													)
+													
+													<div className='content-egresados'>
+														<button onClick={() => getHttp(correoEgresados[0])}>Enviar Correo</button>
+														<p>correo:{correoEgresados}</p>
+													</div>
+												
 												) : (
 													<span>
 														No ha seleccionado nombre de

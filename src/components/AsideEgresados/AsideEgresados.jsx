@@ -31,7 +31,7 @@ const AsideEgresadosStyled = styled.div`
 `;
 const AsideEgresados = () => {
 	return (
-		<AsideEgresadosStyled>
+		<AsideEgresadosStyled id="section-egresados">
 			<Card>
 				<div className='title'>
 					<h3>Sistema de egresados</h3>
@@ -53,6 +53,15 @@ const AsideEgresados = () => {
 								activeClassName='selected'
 							>
 								Perfil de egresados
+							</NavLink>
+							
+						</li>
+						<li>
+						<NavLink
+								to='/egresados/imprimir'
+								activeClassName='selected'
+							>
+								Imprimir
 							</NavLink>
 						</li>
 					</ul>

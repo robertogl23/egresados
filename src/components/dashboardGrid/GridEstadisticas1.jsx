@@ -183,7 +183,7 @@ const GridEstadisticas1 = () => {
 					</Box>
 					<Box height={240} unidadMedida={"px"}>
 						<Card>
-							<BarChart data={data.docentes} />
+							<BarChart data={data.docentes} txt1={"Grafica 1"} />
 						</Card>
 					</Box>
 					<Box height={240} unidadMedida={"px"}>

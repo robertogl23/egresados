@@ -12,7 +12,9 @@ const App = () => {
 	const [preguntasFilter2,setPreguntasFilter2] = useState([])
 	const [selectUser, setSelectUser] = useState(false)
 	const [indexEmple, setindexEmple] = useState ()
-	
+	const [nombreEgresados, setNombreEgresados] = useState ()
+	const [correoEgresados, setCorreoEgresados] = useState ()
+
 
 	return (
 		<div className='app'>
@@ -32,6 +34,10 @@ const App = () => {
 					setPreguntasFilter2,
 					indexEmple,
 					setindexEmple,
+					nombreEgresados,
+					setNombreEgresados,
+					correoEgresados,
+					setCorreoEgresados
 
 				 }}>
 					<AppRouter/>

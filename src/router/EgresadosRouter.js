@@ -4,6 +4,7 @@ import AsideEgresados from "../components/AsideEgresados/AsideEgresados";
 import EgresadosMain from "../pages/egresadosPages/EgresadosMain";
 import PerfilEgresados from "../pages/egresadosPages/PerfilEgresados";
 import UbicacionEgresados from "../pages/egresadosPages/UbicacionEgresados";
+import ImprimirPdf from "../pages/ImprimirPdf";
 const EgresadosRouter = () => {
 	return (
 		<div className="egresados-router">
@@ -24,6 +25,11 @@ const EgresadosRouter = () => {
 						exact
 						path='/egresados/perfil-egresados'
 						component={PerfilEgresados}
+					/>
+					<Route
+						exact
+						path='/egresados/imprimir'
+						component={ImprimirPdf}
 					/>
 					<Redirect exact to="/egresados"/>
 				</Switch>

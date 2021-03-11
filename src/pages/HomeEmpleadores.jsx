@@ -16,7 +16,8 @@ import { LineChart } from '../components/charts/LineChart';
 import useFetch from '../hooks/useFetch';
 import ListFiler2 from '../components/shared/ListFiler2';
 
-
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
@@ -71,15 +72,20 @@ const HomeEmpleadores = props => {
 			{loading ? (
 				"loading"
 			) : (<div className='centrado'>
-				<div className='estilos-grid'>
+				<div className='estilos-grid' ref={ref}>
 					<div className='title-co1'>
 						<h1>Perfil de Empleadores</h1>
+						<Pdf targetRef={ref} filename='code-example.pdf'>
+						{({ toPdf }) => (
+							<button onClick={toPdf}>Generate Pdf</button>
+						)}
+					</Pdf>
 					</div>
 
-					<Grid columns={2} rows={7} medidaRows={"300px"}>
+					<Grid columns={2} rows={7} medidaRows={"300px"}  >
 						<Box>
 							<Card>
-								<div className='contenedor'>
+								<div className='contenedor' >
 									<div className='textcent'>
 										<div className='fijo'>
 											<h2>Nombre del empleador</h2>
@@ -166,7 +172,7 @@ const HomeEmpleadores = props => {
 						</Box>
 						<Box>
 							<Card>
-								<div className='contenedor'>
+								<div className='contenedor' >
 									<div className='textcent'>
 										<div className='fijo'>
 											<h2>Nivel de valores de los egresados</h2>
