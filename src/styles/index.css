@@ -215,16 +215,24 @@ a {
 	height: 100%;
 	width: 100%;
 }
-<<<<<<< HEAD
 .cont-grid{
-	border:1px solid red;
 	height: 1167px;
+	padding: 5px;
 }
-=======
 .estilos {
 	margin-left: 5px;
 	margin-right: 5px;
 	padding: 3px;
 
 }
->>>>>>> 482fec491e688b65a50af87306f1d6c2cbdb72ad
+
+.message-selected{
+	padding: 12px;
+	background:rgb(252, 175, 74) ;
+	color: #fff;
+	border-radius: 4px;
+	margin-top: 80px;
+}
+.p-tp{
+	padding-top: 23px;
+}

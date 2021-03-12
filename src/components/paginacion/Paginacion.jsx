@@ -7,6 +7,7 @@ export class Paginacion extends PureComponent {
         return (
             <div>
                 <NavLink
+                exact
                     to='/'
 								activeClassName='selected'
 							>

@@ -2,9 +2,18 @@ import React, { useContext } from 'react'
 import { AppContext } from '../../hooks/useContextApp';
 
 const ListFiler2 = ({data}) => {
-    const { preguntas2, setPreguntasFilter2, indexEmple , setindexEmple } = useContext(
+    const { preguntas2, setPreguntasFilter2, indexEmple , setindexEmple,setSelectEmple } = useContext(
 		AppContext
     );
+    function getHttp(id) {
+		fetch(
+			`http://localhost:4000/egresados/datos-egresados/${id}`
+		)
+			.then((res) => res.json())
+			.then((data) => {
+				
+			});
+	}
     const handleClick = (e) => {
 		if(!preguntas2){
 			return setPreguntasFilter2(false)
@@ -19,7 +28,7 @@ const ListFiler2 = ({data}) => {
 		elements2.classList.add("hola")
 
 
-		
+		setSelectEmple(true)
         setPreguntasFilter2([d])
         setindexEmple(elements2.id)
     }

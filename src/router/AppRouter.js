@@ -20,9 +20,9 @@ const AppRouter = () => {
             <Header />
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/egresados" component={EgresadosRouter} />
-                <Route exact path="/egresados1" component={Home1} />
-                <Route path="/egresados2" component={Home2} />
+                <Route  path="/egresados" component={EgresadosRouter} />
+                <Route  path="/egresados1" component={Home1} />
+                <Route  path="/egresados2" component={Home2} />
                 <Route path="/egresados3" component={Home3} />
                 <Route path="/egresados4" component={Home4} />
                 <Route path="/egresados5" component={Home5} />

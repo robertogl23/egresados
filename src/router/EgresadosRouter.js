@@ -29,7 +29,7 @@ const EgresadosRouter = () => {
 					/>
 					<Route
 						exact
-						path='/egresados/imprimir'
+						path='/egresados/imprimir/:id'
 						component={ImprimirPdf}
 					/>
 					<Redirect exact to="/egresados"/>
