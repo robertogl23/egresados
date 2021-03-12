@@ -64,6 +64,15 @@ const AsideEgresados = () => {
 								Imprimir
 							</NavLink>
 						</li>
+						<li>
+						<NavLink
+								to='/egresados/imprimir'
+								activeClassName='selected'
+							>
+								dashboard1
+							</NavLink>
+						</li>
+						
 					</ul>
 				</nav>
 			</Card>

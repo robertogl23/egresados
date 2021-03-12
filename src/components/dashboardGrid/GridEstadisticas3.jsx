@@ -12,9 +12,9 @@ import Paginacion from "../paginacion/Paginacion";
 
 const fetcher = (...args) =>
 	fetch(...args).then((res) => res.json());
-const GridEstadisticas1 = () => {
+const GridEstadisticas3 = () => {
 	const { data, loading } = useFetch(
-		"http://localhost:4000/egresados/data/dashboard"
+		"http://localhost:4000/egresados/data/dashboard2"
 	);
 	return (
 		<>
@@ -23,46 +23,57 @@ const GridEstadisticas1 = () => {
 				<Loading typeSpinner={"Grid"}/>
 			) : (
 				<Grid columns={2} rows={20} mq={false}>
+					
+					
+					
+					
+				
 					<Box height={240} unidadMedida={"px"}>
 						<Card>
-							<PieChart data={data.comunicacion}
-							title={"Nivel de Comunicacion del Egresado"}
-							 />
-						</Card>
-					</Box>
-					<Box height={240} unidadMedida={"px"}>
-						<Card>
-							<BarChart data={data.contenidoRelevante} />
+							<PieChart
+								data={data.ciudadana}
+								title={"Nivel para integrarse a la comunidad del Egresado"}
+							/>
 						</Card>
 					</Box>
 					<Box height={240} unidadMedida={"px"}>
 						<Card>
 							<PieChart
-								data={data.comunicacion}
-								title={"Nivel de Comunicacion del Egresado"}
+								data={data.sensibilidadEstetica}
+								title={"Nivel de apreciar y valorar diversas formas artísticas del Egresado"}
 							/>
 						</Card>
 					</Box>
 					<Box height={240} unidadMedida={"px"}>
-						<Card> <div className='contenedor'>
-							<div className='textcent'>
-								<div className='fijo'>
-									<h2>Nivel del Pensamiento Critico del Egresado</h2>
-								</div>
-								<div className='contenedor-card'>
-									<div className='border'>
-										<LineChart data={data.pensamientoCritico} />
-									</div>
-								</div>
-							</div>
-						</div>
+						<Card>
+							<PieChart
+								data={data.diseñar}
+								title={"Nivel para diseñar, configurar y administrar redes computacionales del Egresado"}
+							/>
 						</Card>
 					</Box>
+					<Box height={240} unidadMedida={"px"}>
+						<Card>
+							<PieChart
+								data={data.diseñar2}
+								title={"Nivel para diseñar, desarrollar y aplica modelos computacionales para solucionar problemas del Egresado"}
+							/>
+						</Card>
+					</Box>
+					<Box height={240} unidadMedida={"px"}>
+						<Card>
+							<PieChart
+								data={data.diseñar3}
+								title={"Nivel para diseñar e implementar interfaces hombre-máquina y máquina-máquina para la automatización de sistemas del Egresado"}
+							/>
+						</Card>
+					</Box>
+					
 				</Grid>
 			)}
 		</>
 	);
 };
 
-export default GridEstadisticas1;
+export default GridEstadisticas3;
 
