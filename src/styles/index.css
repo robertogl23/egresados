@@ -215,3 +215,7 @@ a {
 	height: 100%;
 	width: 100%;
 }
+.cont-grid{
+	border:1px solid red;
+	height: 1167px;
+}
