@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import GridEstadisticas1 from "../components/dashboardGrid/GridEstadisticas1";
+
 import GridDashBoard from "../components/dashboardEmpleadores/GridDashBoard";
 import Paginacion from "../components/paginacion/Paginacion";
+import GridEstadisticas4 from "../components/dashboardGrid/GridEstadisticas4";
 
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
@@ -49,7 +50,7 @@ const HomeStyled = styled.main`
 	}
 `;
 
-const Home = () => {
+const Home3 = () => {
 
 	return (
 		<HomeStyled>
@@ -62,7 +63,7 @@ const Home = () => {
 				</div>
 				<div className='content-grid'>
 					<section className='selection-grid-1'>
-						<GridEstadisticas1 />
+						<GridEstadisticas4 />
 					</section>
 				</div>
 				<div className='content-dashboard-header'>
@@ -81,4 +82,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Home3;

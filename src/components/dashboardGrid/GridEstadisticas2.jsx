@@ -12,9 +12,9 @@ import Paginacion from "../paginacion/Paginacion";
 
 const fetcher = (...args) =>
 	fetch(...args).then((res) => res.json());
-const GridEstadisticas1 = () => {
+const GridEstadisticas2 = () => {
 	const { data, loading } = useFetch(
-		"http://localhost:4000/egresados/data/dashboard"
+		"http://localhost:4000/egresados/data/dashboard1"
 	);
 	return (
 		<>
@@ -25,37 +25,42 @@ const GridEstadisticas1 = () => {
 				<Grid columns={2} rows={20} mq={false}>
 					<Box height={240} unidadMedida={"px"}>
 						<Card>
-							<PieChart data={data.comunicacion}
-							title={"Nivel de Comunicacion del Egresado"}
-							 />
-						</Card>
-					</Box>
-					<Box height={240} unidadMedida={"px"}>
-						<Card>
-							<BarChart data={data.contenidoRelevante} />
+							<PieChart
+								data={data.solucionDeProblemas}
+								title={"Nivel para identificar problemas del Egresado"}
+							/>
 						</Card>
 					</Box>
 					<Box height={240} unidadMedida={"px"}>
 						<Card>
 							<PieChart
-								data={data.comunicacion}
-								title={"Nivel de Comunicacion del Egresado"}
+								data={data.interaccionSocial}
+								title={"Nivel para formar parte de equipos de trabajo del Egresado"}
 							/>
 						</Card>
 					</Box>
 					<Box height={240} unidadMedida={"px"}>
-						<Card> <div className='contenedor'>
-							<div className='textcent'>
-								<div className='fijo'>
-									<h2>Nivel del Pensamiento Critico del Egresado</h2>
-								</div>
-								<div className='contenedor-card'>
-									<div className='border'>
-										<LineChart data={data.pensamientoCritico} />
-									</div>
-								</div>
-							</div>
-						</div>
+						<Card>
+							<PieChart
+								data={data.aprendizaje}
+								title={"Nivel de aprendizaje del Egresado"}
+							/>
+						</Card>
+					</Box>
+					<Box height={240} unidadMedida={"px"}>
+						<Card>
+							<PieChart
+								data={data.consistenciaEtica}
+								title={"Nivel para asumir principios éticos del Egresado"}
+							/>
+						</Card>
+					</Box>
+					<Box height={240} unidadMedida={"px"}>
+						<Card>
+							<PieChart
+								data={data.globalizado}
+								title={"Nivel para comprender los aspectos interdependientes del mundo globalizado del Egresado"}
+							/>
 						</Card>
 					</Box>
 				</Grid>
@@ -64,5 +69,5 @@ const GridEstadisticas1 = () => {
 	);
 };
 
-export default GridEstadisticas1;
+export default GridEstadisticas2;
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import GridEstadisticas1 from "../components/dashboardGrid/GridEstadisticas1";
 import GridDashBoard from "../components/dashboardEmpleadores/GridDashBoard";
 import Paginacion from "../components/paginacion/Paginacion";
+import GridEstadisticas5 from "../components/dashboardGrid/GridEstadisticas5";
 
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
@@ -49,7 +50,7 @@ const HomeStyled = styled.main`
 	}
 `;
 
-const Home = () => {
+const Home4 = () => {
 
 	return (
 		<HomeStyled>
@@ -62,7 +63,7 @@ const Home = () => {
 				</div>
 				<div className='content-grid'>
 					<section className='selection-grid-1'>
-						<GridEstadisticas1 />
+						<GridEstadisticas5 />
 					</section>
 				</div>
 				<div className='content-dashboard-header'>
@@ -81,4 +82,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Home4;
