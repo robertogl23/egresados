@@ -63,7 +63,17 @@ const EgresadosMain2 = () => {
                             startRow={1}
                             endRow={3}
                         >
-                            <Card></Card>
+                            <Card>
+                            <div className='contenedor'>
+                                    <div className='textcent'>
+                                        <div className='fijo'>
+                                            <h4>Numero de titulados</h4>
+                                        </div>
+                                        <h1  style={{fontSize:40,marginTop:60} }>{data.titulados}</h1>
+                                        
+                                    </div>
+                                </div>
+                            </Card>
                         </Box>
                         <Box
                             startCol={3}
@@ -71,7 +81,17 @@ const EgresadosMain2 = () => {
                             startRow={1}
                             endRow={3}
                         >
-                            <Card></Card>
+                            <Card>
+                            <div className='contenedor'>
+                                    <div className='textcent'>
+                                        <div className='fijo'>
+                                            <h4>Nombres de Egresados</h4>
+                                        </div>
+                                        <h1 style={{fontSize:40,marginTop:60} }> {data.numeroEgresados}</h1>
+                                       
+                                    </div>
+                                </div>
+                            </Card>
                         </Box>
                         <Box
                             startCol={5}
@@ -79,7 +99,17 @@ const EgresadosMain2 = () => {
                             startRow={1}
                             endRow={3}
                         >
-                            <Card></Card>
+                            <Card>
+                            <div className='contenedor'>
+                                    <div className='textcent'>
+                                        <div className='fijo'>
+                                            <h4>Numero de Egresados con Empleo</h4>
+                                        </div>
+                                        <h1 style={{fontSize:40,marginTop:60} }> {data.data3}</h1>
+                                       
+                                    </div>
+                                </div>
+                            </Card>
                         </Box>
                         <Box
                             startCol={1}
