@@ -36,6 +36,10 @@ const EgresadosMain2 = () => {
 
         selectUser,
         correoEgresados,
+        nombreEgresados,
+        telEgresados,
+        carreraEgresados,
+        matriculaEgresados,
     } = useContext(AppContext);
     const { data, loading } = useFetch("http://localhost:4000/egresados/egresados-main")
     function getHttp(correo) {
@@ -116,10 +120,10 @@ const EgresadosMain2 = () => {
                                                     <button onClick={() => getHttp(correoEgresados[0])}>Enviar Correo
 														</button>
                                                     <p className='datos-egresados2'>Correo:<span>{correoEgresados}</span></p>
-                                                    <p className='datos-egresados'>Nombre Completo:{ }</p>
-                                                    <p className='datos-egresados'>Telefono:{ }</p>
-                                                    <p className='datos-egresados'>Carrera:{ }</p>
-                                                    <p className='datos-egresados'>Matricula:{ }</p>
+                                                    <p className='datos-egresados'>Nombre Completo:<span>{nombreEgresados}</span></p>
+                                                    <p className='datos-egresados'>Telefono:<span>{telEgresados}</span></p>
+                                                    <p className='datos-egresados'>Carrera:<span>{carreraEgresados}</span></p>
+                                                    <p className='datos-egresados'>Matricula:<span>{matriculaEgresados}</span></p>
 
                                                 </div>
 
