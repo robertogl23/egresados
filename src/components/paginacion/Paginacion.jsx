@@ -7,7 +7,7 @@ export class Paginacion extends PureComponent {
         return (
             <div>
                 <NavLink
-                    to='/egresados1'
+                    to='/'
 								activeClassName='selected'
 							>
 								<button className='estilos'>
@@ -15,7 +15,7 @@ export class Paginacion extends PureComponent {
                                 </button>
                 </NavLink>
                 <NavLink
-                    to='/egresados2'
+                    to='/egresados1'
 								activeClassName='selected'
 							>
 								<button className='estilos'>
@@ -23,7 +23,7 @@ export class Paginacion extends PureComponent {
                                 </button>
                 </NavLink>
                 <NavLink
-                    to='/egresados3'
+                    to='/egresados2'
 								activeClassName='selected'
 							>
 								<button className='estilos'>
@@ -31,7 +31,7 @@ export class Paginacion extends PureComponent {
                                 </button>
                 </NavLink>
                 <NavLink
-                    to='/egresados4'
+                    to='/egresados3'
 								activeClassName='selected'
 							>
 								<button className='estilos'>
@@ -39,11 +39,19 @@ export class Paginacion extends PureComponent {
                                 </button>
                 </NavLink>
                 <NavLink
-                    to='/egresados5'
+                    to='/egresados4'
 								activeClassName='selected'
 							>
 								<button className='estilos'>
                                     5
+                                </button>
+                </NavLink>
+                <NavLink
+                    to='/egresados5'
+								activeClassName='selected'
+							>
+								<button className='estilos'>
+                                    6
                                 </button>
                 </NavLink>
             </div>
