@@ -16,8 +16,11 @@ const ref = React.createRef();
 
 const HomeEmpleadores = (props) => {
 	const {
-		selectEmple, 
-		setSelectEmple
+		selectEmple,
+		nombreEmple,
+		correoeEmple,
+		telEmple,
+		empresaEmple
 	} = useContext(AppContext);
 	const { data, loading } = useFetch(
 		"http://localhost:4000/empleadores/data/dashboard2"
@@ -193,11 +196,11 @@ const HomeEmpleadores = (props) => {
                                                 <div className='content-egresados'>
                                                     <button >Enviar Correo
 														</button>
-                                                    <p className='datos-egresados2'>Correo:<span></span></p>
-                                                    <p className='datos-egresados'>Nombre Completo:<span></span></p>
-                                                    <p className='datos-egresados'>Telefono:<span></span></p>
-                                                    <p className='datos-egresados'>Carrera:<span></span></p>
-                                                    <p className='datos-egresados'>Matricula:<span></span></p>
+                                           
+                                                    <p className='datos-egresados'>Nombre Completo:<span>{nombreEmple}</span></p>
+                                                    <p className='datos-egresados'>Telefono:<span> {telEmple} </span></p>
+                                                    <p className='datos-egresados'>Correo:<span> {correoeEmple} </span></p>
+                                                   
 
                                                 </div>
 

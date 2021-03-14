@@ -18,6 +18,13 @@ const App = () => {
 	const [matriculaEgresados, setMatriculaEgresados] = useState ()
 	const [carreraEgresados, setCarreraEgresados] = useState ()
 	const [telEgresados, setTelEgresados] = useState ()
+	const [nombreEmple, setNombreEmple] = useState ()
+	const [correoeEmple, setCorreoeEmple] = useState ()
+	const [telEmple, setTelEmple] = useState ()
+	const [empresaEmple, setEmpresaEmple] = useState ()
+
+
+
 
 
 	return (
@@ -50,6 +57,14 @@ const App = () => {
 					setTelEgresados,
 					selectEmple, 
 					setSelectEmple,
+					nombreEmple, 
+					setNombreEmple,
+					correoeEmple,
+					setCorreoeEmple,
+					telEmple, 
+					setTelEmple,
+					empresaEmple,
+					setEmpresaEmple
 				 }}>
 					<AppRouter/>
 					
