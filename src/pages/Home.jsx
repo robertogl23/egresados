@@ -3,6 +3,7 @@ import styled from "styled-components";
 import GridEstadisticas1 from "../components/dashboardGrid/GridEstadisticas1";
 import GridDashBoard from "../components/dashboardEmpleadores/GridDashBoard";
 import Paginacion from "../components/paginacion/Paginacion";
+import { Link } from "react-router-dom";
 
 const HomeStyled = styled.main`
 	//border: 1px solid blue;
@@ -61,6 +62,7 @@ const Home = () => {
 					</section>
 				</div>
 				<div className='content-grid'>
+					<Link to="/egresados/imprimir/1">Imprimir</Link>
 					<section className='selection-grid-1'>
 						<GridEstadisticas1 />
 					</section>
