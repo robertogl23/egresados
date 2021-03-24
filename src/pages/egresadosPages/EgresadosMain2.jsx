@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import FormCorreo from "../../components/FormCorreo";
 import { Box } from "../../components/grid/Box";
 import { Grid } from "../../components/grid/Grid";
 import Card from "../../components/shared/Card";
@@ -9,11 +10,12 @@ import Loading from "../../components/shared/Loading";
 import Select1 from "../../components/shared/Select1";
 import { AppContext } from "../../hooks/useContextApp";
 import useFetch from "../../hooks/useFetch";
+import { useForm } from "../../hooks/useForm";
 const EgresadosMain2Styled = styled.div`
 	height: auto;
 	width: 100%;
 	.grid {
-		height: 780px;
+		height: 860px;
 		padding: 1em;
 	}
 	.datos-egresados {
@@ -170,36 +172,36 @@ const EgresadosMain2 = () => {
 										</div>
 										<div className='contenedor-card-3'>
 											{selectUser ? (
-												<div className='content-egresados'>
-													<button
-														onClick={() =>
-															getHttp(correoEgresados[0])
-														}
-													>
-														Enviar Correo
-													</button>
-													<p className='datos-egresados2'>
-														Correo:
+												<div className="perfil-egresados">
+													<div className="cont-egresados">
+														<p className='datos-egresados2'>
+															Correo:
 														<span>{correoEgresados}</span>
-													</p>
-													<p className='datos-egresados'>
-														Nombre Completo:
+														</p>
+														<p className='datos-egresados'>
+															Nombre Completo:
 														<span>{nombreEgresados}</span>
-													</p>
-													<p className='datos-egresados'>
-														Telefono:
+														</p>
+														<p className='datos-egresados'>
+															Telefono:
 														<span>{telEgresados}</span>
-													</p>
-													<p className='datos-egresados'>
-														Carrera:
+														</p>
+														<p className='datos-egresados'>
+															Carrera:
 														<span>{carreraEgresados}</span>
-													</p>
-													<p className='datos-egresados'>
-														Matricula:
+														</p>
+														<p className='datos-egresados'>
+															Matricula:
 														<span>
-															{matriculaEgresados}
-														</span>
-													</p>
+																{matriculaEgresados}
+															</span>
+														</p>
+													</div>
+													<div className="cont-egresados">
+													<FormCorreo correo={correoEgresados[0]}/>
+
+													</div>
+
 												</div>
 											) : (
 												<span>

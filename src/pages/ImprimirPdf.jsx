@@ -9,7 +9,7 @@ import LOGO_TESI from "../img/LOGO_TESI.png";
 import logodelestado from "../img/logodelestado.jpg";
 import styled from "styled-components";
 import { Grid } from "../components/grid/Grid";
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 const ImprimirPdfStyled = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -43,11 +43,7 @@ const ImprimirPdfStyled = styled.div`
 const ImprimirPdf = () => {
 	let { id } = useParams();
 	useEffect(() => {
-		console.log(
-			(window.document.querySelector(
-				"header"
-			).style.display = "none")
-		);
+		document.querySelector("header").style.display = "none";
 		console.log(
 			(window.document.getElementById(
 				"section-egresados"
@@ -76,35 +72,35 @@ const ImprimirPdf = () => {
 			<div className='boton'>
 				<button onClick={ImprimirPdf}>pdf</button>
 			</div>
-            <div className="cont-grid">
-				{
-					id == 1 && <GridEstadisticas1/>
-					
+			<div className="cont-grid">
+				{/* {
+					id == 1 && <GridEstadisticas1 />
+
 				}
 				{
-					id == 2 && <GridEstadisticas2/>
-					
+					id == 2 && <GridEstadisticas2 />
+
 				}
 				{
-					id == 3 && <GridEstadisticas3/>
-					
+					id == 3 && <GridEstadisticas3 />
+
 				}
 				{
-					id == 4 && <GridEstadisticas4/>
-					
+					id == 4 && <GridEstadisticas4 />
+
 				}
 				{
-					id == 5 && <GridEstadisticas5/>
-					
+					id == 5 && <GridEstadisticas5 />
+
 				}
 				{
-					id == 6 && <GridEstadisticas6/>
-					
-				}
-			
-                
-            </div>
-           
+					id == 6 && <GridEstadisticas6 />
+
+				} */}
+
+
+			</div>
+
 		</div>
 	);
 };
