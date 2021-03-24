@@ -40,39 +40,12 @@ const AsideEgresados = () => {
 					<ul>
 						<li>
 							<NavLink
-								to='/egresados/ubicacion-egresados'
-								activeClassName='selected'
-							>
-								Ubicacion Laboral
-							</NavLink>
-						</li>
-
-						<li>
-							<NavLink
 								to='/egresados/perfil-egresados'
 								activeClassName='selected'
 							>
 								Perfil de egresados
 							</NavLink>
-							
 						</li>
-						<li>
-						<NavLink
-								to='/egresados/imprimir'
-								activeClassName='selected'
-							>
-								Imprimir
-							</NavLink>
-						</li>
-						<li>
-						<NavLink
-								to='/egresados/imprimir'
-								activeClassName='selected'
-							>
-								dashboard1
-							</NavLink>
-						</li>
-						
 					</ul>
 				</nav>
 			</Card>
